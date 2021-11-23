@@ -1,0 +1,14 @@
+
+<div class="jumbotron">
+  <h1 class="display-4"><%= @user.first_name %> <%= @user.last_name %> </h1>
+  <br/>
+  <p class="lead">CitizenID: <%= @user.CitizenID %></p>
+  <p class="lead">LoginID: <%= @user.login %></p>
+  <p class="lead">Role: <%= @user.role %></p>
+  <hr class="my-4">
+  
+  
+<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-dark" %> 
+<%= link_to 'Back', users_path, class: "btn btn-dark" %>
+
+</div>
