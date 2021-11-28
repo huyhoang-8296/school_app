@@ -33,9 +33,16 @@
     <%= form.text_field :role, class:"form-control", placeholder:"Role" %>
   </div>
   
-  <div class="field form-group">
-    <%= form.number_field :studentID, value: current_member.id, type: :hidden, class:"form-control", placeholder:"ID" %>
-  </div>
+  <% if @role == "Student" %>
+    <div class="field form-group">
+      <%= form.number_field :studentID, value: current_member.id, type: :hidden, class:"form-control", placeholder:"studentID" %>
+    </div>
+  <% else if @role == "Instructor" %>
+    <div class="field form-group">
+      <%= form.number_field :instructorID, value: current_member.id, type: :hidden, class:"form-control", placeholder:"instructorID" %>
+    </div>
+  <% end %>
+  <% end %>
   
   
   <div class="field form-group">

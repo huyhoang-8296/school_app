@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_member!
+  before_action :authenticate_member!, except: [:index, :show]
 
   # GET /users or /users.json
   def index
