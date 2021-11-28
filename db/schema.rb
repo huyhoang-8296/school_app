@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_150430) do
+ActiveRecord::Schema.define(version: 2021_11_26_132632) do
 
   create_table "members", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(version: 2021_11_23_150430) do
     t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "studentID"
+    t.integer "instructorID"
+    t.string "department"
+    t.index ["instructorID"], name: "index_users_on_instructorID"
+    t.index ["studentID"], name: "index_users_on_studentID"
   end
 
 end
